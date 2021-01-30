@@ -333,8 +333,13 @@ static inline unsigned int cpufreq_quick_get(unsigned int cpu)
 
 #if defined(CONFIG_CPU_FREQ_GOV_INTERACTIVE) && \
 					defined(CONFIG_OMAP4_DPLL_CASCADING)
-extern void cpufreq_interactive_set_timer_rate(unsigned long val,
-							unsigned int reset);
+//extern void cpufreq_interactive_set_timer_rate(unsigned long val,
+							//unsigned int reset);
+static inline void cpufreq_interactive_set_timer_rate(unsigned long val,
+							unsigned int reset) {}
+#else
+static inline void cpufreq_interactive_set_timer_rate(unsigned long val,
+							unsigned int reset) {}
 #endif
 
 /*********************************************************************
